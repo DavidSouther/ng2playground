@@ -1,9 +1,7 @@
 import {Component} from '@angular/core';
+import {HeroDetailComponent} from './hero-detail.component';
 
-export interface Hero {
-  id: number;
-  name: string;
-}
+import {Hero} from './hero';
 
 @Component({
   selector: 'my-app',
@@ -18,12 +16,9 @@ export interface Hero {
         {{hero.name}}
       </li>
     </ul>
-    <div *ngIf="selectedHero">
-      <h2>{{selectedHero.name}} details!</h2>
-      <label>id: </label>
-      <input [(ngModel)]="selectedHero.name" placeholder="name" />
-    </div>
+    <my-hero-detail [hero]="selectedHero"></my-hero-detail>
  `,
+  directives: [HeroDetailComponent],
   styles: [
     `
 	.selected {
