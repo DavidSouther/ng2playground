@@ -8,8 +8,8 @@ import {
 } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
-import {Hero} from './hero';
-import {HeroService} from './hero.service';
+import {Hero} from 'shared/hero';
+import {HeroService} from 'client/services/hero.service';
 
 @Component({
   selector: 'my-hero-detail',
@@ -22,7 +22,7 @@ import {HeroService} from './hero.service';
     <button (click)="goBack()">Back</button>
     <button (click)="save()">Save</button>
     `,
-  styleUrls: ['app/hero-detail.component.css']
+  styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit,
     OnDestroy {

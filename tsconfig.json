@@ -7,9 +7,10 @@
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "dist",
+    "baseUrl": "./src",
+    "outDir": "./dist",
     "sourceMap": true,
-    
+
     "diagnostics": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -20,12 +21,16 @@
     "noImplicitThis": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    // "noUnusedParameters": true,
     "preserveConstEnums": true,
     "removeComments": true,
     "skipLibCheck": true,
     "strictNullChecks": true
   },
+  "include": [
+    "src/**/*.ts",
+    "typings/index.d.ts"
+  ],
   "compileOnSave": false,
   "buildOnSave": false,
   "atom": { "rewriteTsconfig": false }
