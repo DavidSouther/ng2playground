@@ -9,6 +9,7 @@ import {
   RupertPlugin,
   Plugins
 } from 'rupert';
+import {createServer as livereload} from 'livereload';
 
 const defaults = {
   log: {level: 'info'},
@@ -40,4 +41,5 @@ export const server =
     Rupert.createApp(defaults, [Plugins.Healthz, Plugins.Static, Html5Root]);
 if (require.main === module) {
   server.start();
+  livereload().watch(normalize(join(__dirname, "../")));
 }

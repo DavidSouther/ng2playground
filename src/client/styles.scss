@@ -1,12 +1,14 @@
+@import '_variables';
+
 /* Master Styles */
 h1 {
   color: #369;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $font-family;
   font-size: 250%;
 }
 h2, h3 {
   color: #444;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $font-family;
   font-weight: lighter;
 }
 body {
@@ -14,28 +16,29 @@ body {
 }
 body, input[text], button {
   color: #888;
-  font-family: Cambria, Georgia;
+  font-family: $font-family;
 }
 a {
   cursor: pointer;
   cursor: hand;
 }
 button {
-  font-family: Arial;
+  font-family: $font-family;
   background-color: #eee;
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
   cursor: hand;
-}
-button:hover {
-  background-color: #cfd8dc;
-}
-button:disabled {
-  background-color: #eee;
-  color: #aaa;
-  cursor: auto;
+
+  &:hover {
+    background-color: #cfd8dc;
+  }
+  &:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+  }
 }
 
 /* Navigation link styles */
@@ -138,7 +141,7 @@ nav a.active {
 
 /* everywhere else */
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $font-family;
 }
 
 .error {color:red;}
@@ -160,4 +163,4 @@ button.delete-button{
 #search-box{
   width: 200px;
   height: 20px;
-}}
+}
