@@ -7,9 +7,21 @@
   <script src="/node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
   <script src="/node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
   <script src="/node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
+
+  <script src="/node_modules/systemjs/dist/system.src.js"></script>
+  <script>
+    System.config({
+      packages: {
+        'client': {defaultExtension: 'js'},
+        'shared': {defaultExtension: 'js'}
+      }
+    });
+    System.import('specs.js')
+    .then(window.onload)
+    .catch(console.error.bind(console));
+  </script>
 </head>
 <body>
-  <script src="/1st.spec.js"></script>
   <script>
     document.write(`<script src="http://${(location.host || 'localhost').split(':')[0]}:35729/livereload.js?snipver=1"></s`+'cript>');
   </script>
