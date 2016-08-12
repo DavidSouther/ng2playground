@@ -10,17 +10,10 @@
     'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
     'rxjs': 'node_modules/rxjs'
   };
-  var paths = {
-    'client/*': 'client/*.js',
-    'shared/*': 'shared/*.js',
-    '*/specs': '*/specs.js',
-  };
   // packages tells the System loader how to load when no filename and/or no
   // extension
   var packages = {
     'app': {main: 'main.js', defaultExtension: 'js'},
-    'client': {defaultExtension: 'js'},
-    'shared': {defaultExtension: 'js'},
     'rxjs': {defaultExtension: 'js'},
     'angular2-in-memory-web-api': {main: 'index.js', defaultExtension: 'js'},
   };
@@ -59,7 +52,7 @@
   // Add package entries for angular packages
   ngPackageNames.forEach(setPackageConfig);
 
-  var config = {map: map, packages: packages, paths: paths};
+  var config = {map: map, packages: packages};
   System.defaultJSExtensions = true;
   System.config(config);
 })(this);
