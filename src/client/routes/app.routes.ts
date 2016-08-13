@@ -1,4 +1,4 @@
-import {provideRouter, RouterConfig} from '@angular/router';
+import {Routes, RouterModule} from '@angular/router';
 
 import {
   HeroesComponent,
@@ -6,11 +6,11 @@ import {
   DashboardComponent
 } from 'client/components/index';
 
-const routes: RouterConfig = [
+const appRoutes: Routes = [
   {path: 'detail/:id', component: HeroDetailComponent},
   {path: 'heroes', component: HeroesComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
 ];
 
-export const appRouterProviders = [provideRouter(routes)];
+export const routing = RouterModule.forRoot(appRoutes);

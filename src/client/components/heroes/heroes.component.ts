@@ -3,15 +3,11 @@ import {Router} from '@angular/router';
 
 import {Hero} from 'shared/hero';
 import {HeroService} from 'client/services/hero.service';
-import {
-  HeroDetailComponent
-} from 'client/components/hero-detail/hero-detail.component';
 
 @Component({
   selector: 'my-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css'],
-  directives: [HeroDetailComponent],
 })
 export class HeroesComponent implements OnInit {
   title: string = 'Tour of Heroes';
