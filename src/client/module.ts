@@ -1,20 +1,18 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule, XHRBackend} from '@angular/http';
+import {FormsModule} from '@angular/forms';
 import {InMemoryBackendService, SEED_DATA} from 'angular2-in-memory-web-api';
-import {InMemoryDataService} from 'client/services/in-memory-data.service';
 
-import {routing} from 'client/routes/app.routes';
-import {AppComponent} from 'client/components/app/app.component';
-import {HeroService} from 'client/services/hero.service';
-import {
-  HeroDetailComponent
-} from 'client/components/hero-detail/hero-detail.component';
+import * as components from './components/index';
+import {InMemoryDataService, HeroService} from './services/index';
+import {routing} from './routes/index';
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     routing
   ],
   providers: [
@@ -22,10 +20,7 @@ import {
     {provide: XHRBackend, useClass: InMemoryBackendService},
     {provide: SEED_DATA, useClass: InMemoryDataService}
   ],
-  declarations: [
-    AppComponent,
-    HeroDetailComponent,
-  ],
-  bootstrap: [AppComponent]
+  declarations: [...Object.values(components)],
+  bootstrap: [components.AppComponent]
 })
 export class AppModule {}
