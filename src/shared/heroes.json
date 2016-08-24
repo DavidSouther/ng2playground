@@ -1,0 +1,15 @@
+{
+  "entities": {
+    "Hero": {
+      "key": "hero_id",
+      "properties": {
+        "hero_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
