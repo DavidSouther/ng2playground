@@ -10,6 +10,7 @@ import {
   Plugins
 } from 'rupert';
 import {createServer as livereload} from 'livereload';
+import {JefriPlugin} from './jefri';
 
 const defaults = {
   log: {level: 'info'},
@@ -38,7 +39,7 @@ class Html5Root extends RupertPlugin {
 }
 
 export const server =
-    Rupert.createApp(defaults, [Plugins.Healthz, Plugins.Static, Html5Root]);
+    Rupert.createApp(defaults, [Plugins.Healthz, Plugins.Static, JefriPlugin, Html5Root]);
 if (require.main === module) {
   server.start();
   livereload().watch(normalize(join(__dirname, "../")));

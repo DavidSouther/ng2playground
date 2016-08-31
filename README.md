@@ -14,7 +14,7 @@ npm start
 * [X] Create Superhero context
 * [X] Generate .d.ts for context
 * [ ] Execute tests consistently in Karma & Mocha
-* [ ] Load JEFRi context in server
+* [X] Load JEFRi context in server
 * [ ] Load JEFRi data in client
   * [ ] Create JEFRi angular2 service
   * [ ] Inject JEFRi service to HeroService

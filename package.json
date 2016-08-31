@@ -12,8 +12,8 @@
     "build:w": "concurrently \"npm run tsc:w\" \"npm run copy:w\" \"npm run sass:w\" ",
     "tsc": "  tsc",
     "tsc:w": "tsc -w",
-    "copy": "  cpx \"src/client/**/*.{html,css,js}\" dist/client",
-    "copy:w": "cpx \"src/client/**/*.{html,css,js}\" dist/client --watch",
+    "copy": "  cpx \"src/{client,shared}/**/*.{html,css,js{,on}}\" dist",
+    "copy:w": "cpx \"src/{client,shared}/**/*.{html,css,js{,on}}\" dist --watch",
     "sass": "  node-sass  --recursive --output dist/client --source-map true --source-map-contents --include-path src/client src/client",
     "sass:w": "node-sass  --recursive --output dist/client --source-map true --source-map-contents --include-path src/client src/client --watch"
   },
